@@ -19,6 +19,7 @@ If you put in your own image you should use image that has width and height both
 In the MapsActivity.java file you should change the 
 
 > private static final int overlayImageWidth = 1024;
+
 > private static final int overlayImageHeight = 1024;
 
 lines to represent your image's size and the
