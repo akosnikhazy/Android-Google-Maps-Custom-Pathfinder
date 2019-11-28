@@ -17,10 +17,14 @@ After you have API key from Google and you put it in the google_maps_api.xml fil
 If you put in your own image you should use image that has width and height both sized to powers of two (it doesn't have to be a square: 1024x512 is good too). Put it in the drawable folder and modify the MapsActivity.java file accordingly.
 
 In the MapsActivity.java file you should change the 
+
 > private static final int overlayImageWidth = 1024;
 > private static final int overlayImageHeight = 1024;
+
 lines to represent your image's size and the
+
 > bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.maps_f1);
+
 line if you use another file name.
 
 # 3. Create your own nodes and edges:
@@ -28,6 +32,7 @@ In the nodes.csv file you have to list all of the points that you might visit on
 
 Example line:
 > 1,173,160,First Node,1,1
+
 Explanation:
 > Node ID,position X on the image, position Y on the image, Node Name, Level, Importance
 
@@ -41,6 +46,7 @@ In the edges.csv file you have to make connections between all the nodes. Loose 
 
 Example line:
 > 1,1,2,100,First Edge
+
 Explanation:
 > Edge ID,From Node ID,To Node ID,Length,Edge Name
 
@@ -53,5 +59,7 @@ The menu_edges.csv, menu_from_nodes.csv and the menu_to_nodes.csv are list for t
 
 Set up working avoid edges functionality:
 After you built your node-edge system (you have a graph) you should come up with a longest possible distance for the whole. For example you have 3 nodes, with two edges (basically imagine a line with 3 points) and those two edges have a length of 10 and 20, then your longest possible distance is 30. In the Edge.java file's 
+
 > private final static int maxEdgeLength = 11111;
+
 line you have to specify a number higher than the longest possible path. This is needed for the "avoid edges" functionality. If the avoided edge is smaller than the longest possible path the algorithm will still take that edge in some cases. We can't delete edges so we have to give them such a length that it doesn't worth putting in the path.
