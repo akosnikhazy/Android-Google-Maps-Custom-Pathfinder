@@ -4,7 +4,7 @@ Find and draw shortest path on Google Maps Custom Overlay with Dijkstra's algori
 # Steps
 * [1. How to use](#1-how-to-use)
 * [2. Use your own image](#2-use-your-own-image)
-* [3. Create your own nodes and edges](3-create-your-own-nodes-and-edges)
+* [3. Create your own nodes and edges](#3-create-your-own-nodes-and-edges)
 
 # 1. How to use:
 A fast way to set up the google maps part of it is to create a new Google Maps Activity. It will set up your project ot be compatible with Maps API.
@@ -17,19 +17,19 @@ After you have API key from Google and you put it in the google_maps_api.xml fil
 If you put in your own image you should use image that has width and height both sized to powers of two (it doesn't have to be a square: 1024x512 is good too). Put it in the drawable folder and modify the MapsActivity.java file accordingly.
 
 In the MapsActivity.java file you should change the 
->private static final int overlayImageWidth = 1024;
->private static final int overlayImageHeight = 1024;
+> private static final int overlayImageWidth = 1024;
+> private static final int overlayImageHeight = 1024;
 lines to represent your image's size and the
->bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.maps_f1);
+> bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.maps_f1);
 line if you use another file name.
 
 # 3. Create your own nodes and edges:
 In the nodes.csv file you have to list all of the points that you might visit on the map.
 
 Example line:
->1,173,160,First Node,1,1
+> 1,173,160,First Node,1,1
 Explanation:
->Node ID,position X on the image, position Y on the image, Node Name, Level, Importance
+> Node ID,position X on the image, position Y on the image, Node Name, Level, Importance
 
 * Node ID: An Unique identifier for the node.
 * position X and Y: you have to write the X and Y pixel value on the image. I use paint for this as it shows this value on the bottom left corner. It is a good idea to use the same x values for nodes that are next to each other and same y values for the ones above each other.
