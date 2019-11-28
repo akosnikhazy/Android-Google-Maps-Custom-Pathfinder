@@ -64,3 +64,5 @@ After you built your node-edge system (you have a graph) you should come up with
 > private final static int maxEdgeLength = 11111;
 
 line you have to specify a number higher than the longest possible path. This is needed for the "avoid edges" functionality. If the avoided edge is smaller than the longest possible path the algorithm will still take that edge in some cases. We can't delete edges so we have to give them such a length that it doesn't worth putting in the path.
+
+> P.S. I know I left an API key in the google xml file. I left it there as an example, it was turned off before I uploaded this.
