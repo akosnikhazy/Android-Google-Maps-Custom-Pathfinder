@@ -1,7 +1,16 @@
 # Android-Google-Maps-Custom-Pathfinder
 Find and draw shortest path on Google Maps Custom Overlay with Dijkstra's algorithm
 
-How to use:
+        How to use:
+            A fast way to set up the google maps part of it is to create a new
+            Google Maps Activity. It will set up your project ot be compatible with
+            Maps API.
+            
+            Before you run your application, you need a Google Maps API key.
+            you have to put the API key in the google_maps_api.xml file.
+            read the comment there for more information.
+            without it you will not see the image overlay on the map.
+           
             After you have API key from Google and you put it in the google_maps_api.xml file
             you have a working Android Maps application. This contains a custom map I drawn in
             paint, with 26 nodes and 28 edges. Select a starting and ending note, experiment
