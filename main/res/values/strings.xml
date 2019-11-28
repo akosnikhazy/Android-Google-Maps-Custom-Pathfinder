@@ -1,0 +1,24 @@
+<resources>
+
+    <string name="app_name">Path Finder</string>
+
+    <string name="start">Directions</string>
+
+    <string name="listDescription">Touch items to delete</string>
+
+    <string name="dropdownFromWhere">Start node</string>
+    <string name="dropdownToWhere">End node</string>
+    <string name="dropdownAvoid">Avoid these edges</string>
+
+    <string name="back">Back</string>
+
+    <string name="startPoint">"Start Point - "</string>
+
+    <string name="error_nothing_selected">You should select Start and End nodes</string>
+    <string name="error_path">Error in path calculation</string>
+    <string name="error_already_avoided"> is already avoided</string>
+    <string name="error_memory">Low Memory</string>
+
+    <string name="title_activity_maps">GMap</string>
+
+</resources>
