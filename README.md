@@ -1,6 +1,8 @@
 # Android-Google-Maps-Custom-Pathfinder
 Find and draw shortest path on Google Maps Custom Overlay with Dijkstra's algorithm
 
+Short post about its development: https://yzahk.in/android-google-maps-custom-path-finder/
+
 # Steps
 * [1. How to use](#1-how-to-use)
 * [2. Use your own image](#2-use-your-own-image)
