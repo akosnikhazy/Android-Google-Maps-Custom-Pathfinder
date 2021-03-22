@@ -1,7 +1,11 @@
 # Android-Google-Maps-Custom-Pathfinder
 Find and draw shortest path on Google Maps Custom Overlay with Dijkstra's algorithm
 
-Short post about its development: https://yzahk.in/android-google-maps-custom-path-finder/
+~~Short post about its development: https://yzahk.in/android-google-maps-custom-path-finder/~~
+
+I needed to make a custom path finder map application. It was faster to use Google Maps API so I have the awesome rotate, zoom and most importantly GPS features without me inventing the wheel again. But this presented some problems: most importantly I had to map the overlay image pixel values to Google maps coordinates, to draw points and lines (nodes and edges) precisely. This was a really fun way to learn C# and Android Development.
+
+In a later version I managed to hook up the GPS part too. I am not releasing that here, but as the real coordinates of the building is rotated and smaller than the overlay custom map image I had to make my own GPS marker that is transformed to be at the right place. Something for you to think about if you want to use this. Its simple math.
 
 # Steps
 * [1. How to use](#1-how-to-use)
@@ -9,14 +13,14 @@ Short post about its development: https://yzahk.in/android-google-maps-custom-pa
 * [3. Create your own nodes and edges](#3-create-your-own-nodes-and-edges)
 
 # 1. How to use:
-A fast way to set up the google maps part of it is to create a new Google Maps Activity. It will set up your project ot be compatible with Maps API.
+A fast way to set up the Google Maps part of it is to create a new Google Maps Activity. It will set up your project to be compatible with Maps API.
 
-Before you run your application, you need a Google Maps API key. you have to put the API key in the google_maps_api.xml file. read the comment there for more information. Without it you will not see the image overlay on the map.
+Before you run your application, you need a Google Maps API key. You have to put the API key in the google_maps_api.xml file. Read the comment there for more information. Without it you will not see the image overlay on the map.
 
-After you have API key from Google and you put it in the google_maps_api.xml file you have a working Android Maps application. This contains a custom map I drawn in paint, with 26 nodes and 28 edges. Select a starting and ending note, experiment with the avoidable path function to see how the path changes so you get an idea about the workings of Dijkstra's algorithm.
+After you have API key from Google and you put it in the google_maps_api.xml file you have a working Android Maps application. This contains a custom map I drawn in paint, with 26 nodes and 28 edges. Select a starting and ending node, experiment with the avoidable path function to see how the path changes so you get an idea about the workings of Dijkstra's algorithm.
 
 # 2. Use your own image:
-If you put in your own image you should use image that has width and height both sized to powers of two (it doesn't have to be a square: 1024x512 is good too). Put it in the drawable folder and modify the MapsActivity.java file accordingly.
+If you put in your own image you should use image that has width and height both sized to powers of two (it doesn't have to be a square: 1024x512 is good too, but most devices prefer this rule. Some will show any image). Put it in the drawable folder and modify the MapsActivity.java file accordingly.
 
 In the MapsActivity.java file you should change the 
 
